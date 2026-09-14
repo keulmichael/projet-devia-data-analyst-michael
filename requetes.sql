@@ -9,7 +9,6 @@ SELECT *
 FROM ventes;
 
 -- 2. Chiffre d'affaires total
--- Le chiffre d'affaires d'une ligne = prix * quantité vendue
 SELECT
     SUM(prix * qte) AS chiffre_affaires_total
 FROM ventes;
@@ -17,7 +16,6 @@ FROM ventes;
 -- Résultat attendu avec le fichier ventes.csv : 44825
 
 -- 3. Ventes par produit
--- Ici, "ventes" correspond au nombre total d'unités vendues.
 SELECT
     produit,
     SUM(qte) AS ventes
@@ -43,7 +41,6 @@ ORDER BY region;
 -- Sud  : 1775
 
 -- 5. Chiffre d'affaires par produit
--- Cette requête sera utile pour le graphique Python demandé dans le brief.
 SELECT
     produit,
     SUM(prix * qte) AS chiffre_affaires
@@ -57,7 +54,6 @@ ORDER BY produit;
 -- Produit C : 11500
 
 -- 6. Optionnel : chiffre d'affaires par région
--- Non exigé dans les trois questions SQL du brief, mais utile pour approfondir l'analyse.
 SELECT
     region,
     SUM(prix * qte) AS chiffre_affaires
